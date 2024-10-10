@@ -1,6 +1,6 @@
 const express = require("express");
-const { getLatestCrypto } = require("../controllers/getLatestCrypto");
 const router = express.Router();
+const { getLatestCrypto } = require("../controllers/getLatestCrypto");
 
 router.get("/", getLatestCrypto);
 
