@@ -16,7 +16,9 @@ const fetchAndStoreCryptoJob = async (req,res) => {
       }
     );
    
+    
     const data=response.data;
+  
     const cryptos=[
       {
         coinId:'bitcoin',
@@ -41,6 +43,8 @@ const fetchAndStoreCryptoJob = async (req,res) => {
     return res.json(data);
   } catch (e) {
     console.error("Error", e);
+    return res.status(500).json({message:'Server Error for storing Crypto !'})
+
   }
 };
 module.exports = fetchAndStoreCryptoJob;
