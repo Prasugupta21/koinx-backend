@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const cryptoDataSchema=new mongoose.Schema({
+const cryptoCurrencySchema =new mongoose.Schema({
    coinId:{type:String,required:true},
    price:{type:Number,required:true},
    marketCap: { type: Number, required: true },  // Market cap in USD
@@ -8,5 +8,5 @@ const cryptoDataSchema=new mongoose.Schema({
     timestamp: { type: Date, default: Date.now } 
 })
 
-const cryptoData=mongoose.model('cryptoData',cryptoDataSchema);
-module.exports=cryptoData;
+const cryptoCurrency=mongoose.model('cryptoData',cryptoCurrencySchema);
+module.exports=cryptoCurrency;

@@ -1,14 +1,15 @@
-require('dotenv').config();
-const express=require('express');
-const connectDB=require('./config/db');
+require("dotenv").config();
+const express = require("express");
+const connectDB = require("./config/db");
 
-const app=express();
+const app = express();
 
+const fetchAndStore = require("./routes/fetchAndStore");
 connectDB();
 app.use(express.json());
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }));
+app.use("/", fetchAndStore);
 
-
-app.listen(3000,(req,res)=>{
-    console.log('server started')
-})
+app.listen(3000, () => {
+  console.log("server started");
+});
